@@ -36,8 +36,8 @@ public class User {
     private Set<Club>clubs;
 @OneToMany(mappedBy = "user")
     private Set<Competition>competitions;
-@OneToMany(mappedBy = "user")
-    private Set<Event>events;
+//@OneToMany(mappedBy = "user")
+   // private Set<Event>events;
 @OneToMany(mappedBy = "user")
     private Set<JobApplication>jobApplications;
 @OneToMany(mappedBy = "user")

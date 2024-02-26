@@ -10,7 +10,6 @@ import org.springframework.data.annotation.CreatedDate;
 import java.io.Serializable;
 import java.util.Date;
 
-@Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,6 +26,12 @@ public class Event implements Serializable {
     private Date eventDate;
     private String imageE;
 
+    // Méthode pour définir l'identifiant de l'événement
+    public void setId(Long id) {
+        this.idEvent = id;
+    }
+
+
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -34,7 +39,6 @@ public class Event implements Serializable {
     private Date createdAt;
     @Enumerated(EnumType.STRING)
     private EventType eventType;
-
-@ManyToOne
-private  User user;
+//@ManyToOne
+    //private User user;
 }
