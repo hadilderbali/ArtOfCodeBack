@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
@@ -14,11 +15,9 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Enumerated(EnumType.STRING)
-    private  Role role;
     private Long userid;
     private String username;
     private String userlastname;
@@ -27,6 +26,8 @@ public class User {
     private String userpassword;
     private String userbdate;
     private String userphoto;
+    @Enumerated(EnumType.STRING)
+    private  Role role;
 
 @OneToMany
     private Set<Blog>blogs;

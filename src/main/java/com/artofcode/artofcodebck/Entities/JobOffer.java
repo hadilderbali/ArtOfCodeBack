@@ -29,7 +29,7 @@ public class JobOffer implements Serializable {
     private  float SalaryRange;
     @Enumerated(EnumType.STRING)
     private  Type JobType;
-    @OneToOne(mappedBy = "jobOffer" ,cascade ={CascadeType.PERSIST ,CascadeType.REMOVE})
+    @OneToOne(mappedBy = "jobOffer" )
     private JobApplication jobApplication;
     @ManyToOne
     private  User user;
