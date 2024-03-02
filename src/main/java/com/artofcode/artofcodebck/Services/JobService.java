@@ -33,6 +33,9 @@ public class JobService {
      //   return jobApplicationRepository.findAllByNameD(NameD);
     //}
 
+    public List<JobApplication> getAllAplications() {
+        return  jobApplicationRepository.findAll();
+    }
     public JobOffer addJobOffer(JobOffer jobOffer){
         return jobOfferRepository.save(jobOffer);
     }
@@ -45,6 +48,11 @@ public class JobService {
     public void deleteJobOffer(Long IdR){
         jobOfferRepository.deleteById(IdR);
     }
+
+    public List<JobOffer> getJobOffers(){
+        return jobOfferRepository.findAll();
+    }
+
 
 
 }

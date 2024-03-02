@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/job")
+@CrossOrigin("*")
 public class JobApplicationController {
     final JobService jobService;
 
@@ -46,9 +47,13 @@ public class JobApplicationController {
     public JobOffer addJobOffer(@RequestBody JobOffer jobOffer){
         return jobService.addJobOffer(jobOffer);
 }
-@GetMapping("IdR")
-    public  JobOffer getOffer(@PathVariable Long IdR){
+    @GetMapping("/offer/{IdR}")
+    public  JobOffer getjobofferffer(@PathVariable Long IdR){
         return jobService.getJobOffer(IdR);
 }
+    @GetMapping("/getoffer")
+    public  List<JobOffer> getOffer(){
+        return jobService.getJobOffers();
+    }
 
 }
