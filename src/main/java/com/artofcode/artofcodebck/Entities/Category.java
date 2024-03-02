@@ -6,19 +6,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
+
+import java.io.Serializable;
+import java.util.Set;
 
 @Getter
 @Setter
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class Category {
+public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long categoryId ;
-    private String name ;
-    private String description ;
+    private  Long categoryId;
+    private String title;
+    private String description;
+    private  String imageC;
     @OneToMany(mappedBy = "category")
-    private List<Blog> blogList ;
+    private Set<Tutorial> tutorials;
+    @OneToMany(mappedBy = "category")
+    private  Set<Blog> blogList;
+    @OneToMany(mappedBy = "category")
+    private Set<Competition> competitions;
+
 }

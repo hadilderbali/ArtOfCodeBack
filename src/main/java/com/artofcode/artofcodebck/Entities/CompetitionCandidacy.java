@@ -1,32 +1,26 @@
 package com.artofcode.artofcodebck.Entities;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 
-public class Blog implements Serializable {
+public class CompetitionCandidacy implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long blogId;
-    private String title;
-    private String content;
-    private Date dateBlog;
-
+    private Long idCandidacy;
+    @OneToMany(mappedBy = "competitionCandidacy")
+    private Set<Tutorial> tutorials;
     @ManyToOne
-    private User user;
-    @ManyToOne
-    private Category category;
+    private Competition competition;
 }
