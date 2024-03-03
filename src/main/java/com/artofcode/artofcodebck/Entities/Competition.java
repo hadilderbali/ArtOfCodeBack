@@ -18,17 +18,19 @@ import java.util.Set;
 public class Competition implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdCompetition;
+    private long IdCompetition;
     private String CompetitionName;
     private Date Deadline;
     private String Description;
-    private  String image;
- @ManyToOne
- private  User user;
+    private  byte [] image;
+
     @OneToMany(mappedBy = "competition")
     private  Set<ReclamationCompetition> reclamationCompetitions;
-    @OneToMany(mappedBy = "competition")
-    private Set<CompetitionCandidacy> competitionCandidacies;
+
     @ManyToOne
     private Category category;
-}
+
+
+
+    @OneToMany(mappedBy = "competition", cascade = CascadeType.ALL)
+    private Set<CompetitionCandidacy> candidacies;}

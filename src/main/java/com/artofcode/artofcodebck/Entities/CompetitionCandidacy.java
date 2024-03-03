@@ -19,8 +19,16 @@ public class CompetitionCandidacy implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCandidacy;
-    @OneToMany(mappedBy = "competitionCandidacy")
+    private String video;
+    @OneToMany(mappedBy = "CompetitionCandidacy")
     private Set<Tutorial> tutorials;
     @ManyToOne
     private Competition competition;
+    @OneToOne(mappedBy = "candidacy")
+    private Grades grade;
+    @OneToOne(mappedBy = "candidacy", cascade = CascadeType.ALL)
+    private Grades grades;
+
+
+
 }

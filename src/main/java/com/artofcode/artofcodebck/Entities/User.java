@@ -35,8 +35,7 @@ public class User implements Serializable {
     private Profil profil;
 @OneToMany(mappedBy = "user")
     private Set<Club>clubs;
-@OneToMany(mappedBy = "user")
-    private Set<Competition>competitions;
+
 @OneToMany(mappedBy = "user")
     private Set<Event>events;
 @OneToMany(mappedBy = "user")
