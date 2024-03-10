@@ -32,5 +32,5 @@ public class Competition implements Serializable {
 
 
 
-    @OneToMany(mappedBy = "competition", cascade = CascadeType.ALL)
-    private Set<CompetitionCandidacy> candidacies;}
+    @OneToMany(mappedBy = "competition")
+    private Set<CompetitionCandidacy> CompetitionCandidacy;}

@@ -24,9 +24,9 @@ public class CompetitionCandidacy implements Serializable {
     private Set<Tutorial> tutorials;
     @ManyToOne
     private Competition competition;
-    @OneToOne(mappedBy = "candidacy")
+    @OneToOne(mappedBy = "CompetitionCandidacy")
     private Grades grade;
-    @OneToOne(mappedBy = "candidacy", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "CompetitionCandidacy", cascade = CascadeType.ALL)
     private Grades grades;
 
 

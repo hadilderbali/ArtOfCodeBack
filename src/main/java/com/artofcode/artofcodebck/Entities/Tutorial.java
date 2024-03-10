@@ -7,8 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.Set;
+
 
 @Entity
 @Getter
@@ -24,9 +23,9 @@ public class Tutorial implements Serializable {
     private Long duration;
     @Enumerated(EnumType.STRING)
     private Level level;
- @ManyToOne
-    private CompetitionCandidacy competitionCandidacy;
- @ManyToOne
+    @ManyToOne
+    private CompetitionCandidacy CompetitionCandidacy;
+    @ManyToOne
     private Category category;
 
 

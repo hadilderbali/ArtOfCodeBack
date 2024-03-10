@@ -21,7 +21,6 @@ public class Grades implements Serializable {
     private float CandidacyGrade;
 
     @OneToOne
-    @MapsId("idCandidacy") // Map to the "idCandidacy" property of Candidacy entity
-    private CompetitionCandidacy competitionCandidacy;
+    private CompetitionCandidacy CompetitionCandidacy;
 
 }
