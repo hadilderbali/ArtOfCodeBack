@@ -22,6 +22,7 @@ public class Tutorial implements Serializable {
     private String title;
     private String description;
     private Long duration;
+    private String video;
     @Enumerated(EnumType.STRING)
     private Level level;
  @ManyToOne

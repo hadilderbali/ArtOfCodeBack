@@ -1,15 +1,17 @@
 package com.artofcode.artofcodebck.Services;
 
 import com.artofcode.artofcodebck.Entities.Tutorial;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
 public interface ITutorialService {
-    Tutorial addTutorial(Tutorial tutorial);
-    Tutorial updateTutorial(Tutorial tutorial);
-    Tutorial retrieveTutorial (long tutorialId);
+    Tutorial addOrUpdateTutorial(Tutorial tutorial);
+
+    Tutorial findTutorialById (long tutorialId);
 
     void deleteTutorial (long tutorialId);
-    List<Tutorial> retrieveAllTutorial();
+    List<Tutorial> findAllTutorials();
+
 
 }
