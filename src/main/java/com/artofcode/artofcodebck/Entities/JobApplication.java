@@ -16,13 +16,13 @@ import java.io.Serializable;
 public class JobApplication  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long IdDancer;
-    private String NameD;
-    private String EmailDancer;
-    private Integer PhoneNumberDancer;
-    private  String ImageA;
+    private  Long idDancer;
+    private String nameD;
+    private String emailDancer;
+    private Integer phoneNumberDancer;
+    private  String imageA;
 
-    private String CoverLetter;
+    private String coverLetter;
 
     @OneToOne
     private JobOffer jobOffer;

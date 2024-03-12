@@ -10,32 +10,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
 public class JobService {
     private  final IJobOfferRepository jobOfferRepository;
-    private final IJobApplicationRepository jobApplicationRepository;
-    public JobApplication addJobApplication(JobApplication jobApplication){
-        return jobApplicationRepository.save(jobApplication);
-    }
- public  JobApplication updateJobApplication(JobApplication jobApplication){
-        return jobApplicationRepository.save(jobApplication);
- }
- public  void deleteJobApplication(Long IdDancer) {
-     jobApplicationRepository.deleteById(IdDancer);
 
- }
-    public JobApplication getApplication(Long IdDancer) {
-        return  jobApplicationRepository.findById(IdDancer).orElse(null);
-    }
-   // public List<JobApplication> jobApplications(String NameD){
-     //   return jobApplicationRepository.findAllByNameD(NameD);
-    //}
 
-    public List<JobApplication> getAllAplications() {
-        return  jobApplicationRepository.findAll();
-    }
     public JobOffer addJobOffer(JobOffer jobOffer){
         return jobOfferRepository.save(jobOffer);
     }
@@ -45,14 +27,15 @@ public class JobService {
     public JobOffer getJobOffer(Long IdR){
         return jobOfferRepository.findById(IdR).orElse(null);
     }
-    public void deleteJobOffer(Long IdR){
-        jobOfferRepository.deleteById(IdR);
-    }
 
     public List<JobOffer> getJobOffers(){
         return jobOfferRepository.findAll();
     }
 
 
+
+    public void removeJobOffer(Long IdR){
+        jobOfferRepository.deleteById(IdR);
+    }
 
 }
