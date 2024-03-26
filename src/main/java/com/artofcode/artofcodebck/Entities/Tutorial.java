@@ -21,13 +21,14 @@ public class Tutorial implements Serializable {
     private String title;
     private String description;
     private Long duration;
+    private String video;
     @Enumerated(EnumType.STRING)
     private Level level;
     @ManyToOne
     private CompetitionCandidacy CompetitionCandidacy;
     @ManyToOne
-    private Category category;
-
+    @JoinColumn(name = "category_id") // Utilisez cette annotation pour la colonne de jointure
+    private Category category; // Renommez cette propriété pour correspondre à la propriété mappée dans Category
 
 
 }
