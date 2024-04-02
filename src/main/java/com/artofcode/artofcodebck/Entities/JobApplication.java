@@ -1,5 +1,6 @@
 package com.artofcode.artofcodebck.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,9 +24,9 @@ public class JobApplication  implements Serializable {
     private  String imageA;
 
     private String coverLetter;
-
     @OneToOne
     private JobOffer jobOffer;
+@JsonIgnore
     @ManyToOne
     private User user;
 }

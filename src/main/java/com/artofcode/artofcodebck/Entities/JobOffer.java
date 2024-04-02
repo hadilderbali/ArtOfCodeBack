@@ -1,5 +1,6 @@
 package com.artofcode.artofcodebck.Entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,15 +25,16 @@ public class JobOffer implements Serializable {
     private String  title ;
     private  String location;
     private  Integer number ;
+
     private LocalDate datePost;
     private  String description;
     private  String email;
-    private  String image;
+    private  String fileName;
     private  float salaryRange;
     @Enumerated(EnumType.STRING)
     private  Type jobType;
     @JsonIgnore
-    @OneToOne(mappedBy = "jobOffer" )
+    @OneToOne (mappedBy = "jobOffer", cascade = CascadeType.REMOVE)
     private JobApplication jobApplication;
     @JsonIgnore
     @ManyToOne
