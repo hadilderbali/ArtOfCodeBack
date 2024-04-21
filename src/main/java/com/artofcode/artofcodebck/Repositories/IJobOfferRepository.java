@@ -1,16 +1,19 @@
 package com.artofcode.artofcodebck.Repositories;
 
 import com.artofcode.artofcodebck.Entities.JobOffer;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 public interface IJobOfferRepository extends JpaRepository<JobOffer,Long> {
+    Page<JobOffer> findByTitleContainingAndLocationContaining(String title, String location, Pageable pageable);
 
-    List<JobOffer> findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCaseAndLocationContainingIgnoreCase(String keyword, String keyword1, String location);
+    Page<JobOffer> findByTitleContaining(String title, Pageable pageable);
 
-    List<JobOffer> findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(String keyword, String keyword1);
+    Page<JobOffer> findByLocationContaining(String location, Pageable pageable);
 
-    List<JobOffer> findByLocationContainingIgnoreCase(String location);
+
+    Page<JobOffer> findByUserUserid(Long userId, Pageable pageable);
 }

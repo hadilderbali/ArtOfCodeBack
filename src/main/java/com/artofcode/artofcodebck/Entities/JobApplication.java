@@ -22,11 +22,13 @@ public class JobApplication  implements Serializable {
     private String emailDancer;
     private Integer phoneNumberDancer;
     private  String imageA;
-
+    private  boolean status = false;
     private String coverLetter;
+    @JsonIgnore
     @OneToOne
     private JobOffer jobOffer;
-@JsonIgnore
+  @JsonIgnore
     @ManyToOne
+  @JoinColumn(name = "dancer_id")
     private User user;
 }

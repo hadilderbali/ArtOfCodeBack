@@ -38,5 +38,7 @@ public class JobOffer implements Serializable {
     private JobApplication jobApplication;
     @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "recruiter_id")
+
     private  User user;
 }
