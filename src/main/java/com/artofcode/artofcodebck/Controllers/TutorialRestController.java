@@ -16,8 +16,8 @@ import java.util.Map;
 
 @RequiredArgsConstructor
 @RestController
-@CrossOrigin("http://localhost:4200/api")
-@RequestMapping("/tutorial")
+@CrossOrigin("http://localhost:4200")
+@RequestMapping("/api/v1/tutorial")
 public class TutorialRestController {
     private final ITutorialService TutorialService;
 
