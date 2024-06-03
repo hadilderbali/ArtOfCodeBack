@@ -19,7 +19,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 @RestController
 @CrossOrigin("http://localhost:4200/api")
-@RequestMapping("/reclamation")
+@RequestMapping("/api/v1/reclamation")
 public class ReclamationCompetitionRestController {
     private final IReclamationCompetitionService reclamationCompetitionService;
     private final SentimentAnalysisService sentimentAnalysisService; // Injection du service d'analyse de sentiment
