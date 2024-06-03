@@ -37,5 +37,4 @@ public class CompetitionCandidacy implements Serializable {
     @JsonIgnore
     @ManyToOne
     private User user;
-
 }

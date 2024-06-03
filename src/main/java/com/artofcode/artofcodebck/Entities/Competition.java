@@ -27,6 +27,7 @@ public class Competition implements Serializable {
     private  String Picture;
     private LocalTime hour;
     private boolean expired;
+    private  byte [] image;
     @OneToMany(mappedBy = "competition")
     private  Set<ReclamationCompetition> reclamationCompetitions;
 
