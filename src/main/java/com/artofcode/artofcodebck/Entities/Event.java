@@ -1,5 +1,6 @@
 package com.artofcode.artofcodebck.Entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,17 +26,18 @@ public class Event implements Serializable {
     private String city;
     private int availableTickets;
     private Float ticketPrice;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date eventDate;
     private String imageE;
-
-
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreatedDate
     private Date createdAt;
     @Enumerated(EnumType.STRING)
     private EventType eventType;
-
-@ManyToOne
-private  User user;
+    private int likes;
+    private int dislikes;
+    @ManyToOne
+    private User user;
+   
 }

@@ -64,6 +64,12 @@ private List<User> followingUsers;
   private Set<JobOffer>jobOffers;
   @OneToMany(mappedBy = "user")
   private Set<Challenges>challenges;
+  @OneToMany(mappedBy = "senderId")
+  @JsonIgnore
+  private Set<Message> messages1;
+  @OneToMany(mappedBy = "recipientId")
+  @JsonIgnore
+  private Set<Message> messages2;
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
     return role.getAuthorities();
