@@ -3,7 +3,6 @@ package com.artofcode.artofcodebck.user;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -33,7 +32,10 @@ public enum Role {
                   Permission.MANAGER_DELETE,
                   Permission.MANAGER_CREATE
           )
-  )
+  ),
+  DANCER(Collections.emptySet()),
+  JUDGE(Collections.emptySet()),
+  RECRUITER(Collections.emptySet()),
 
   ;
 

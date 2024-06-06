@@ -2,10 +2,7 @@ package com.artofcode.artofcodebck.user;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-
-import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -23,4 +20,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
   Integer nubusers();
   @Query(value="select * from user where id != :id",nativeQuery = true)
   List<User> userconnect(@Param("id") Integer id);
+
+  User findByIdAndRole(Integer id, Role role);
 }

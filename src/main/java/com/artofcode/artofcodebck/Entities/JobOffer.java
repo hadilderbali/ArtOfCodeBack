@@ -1,5 +1,6 @@
 package com.artofcode.artofcodebck.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,6 +9,7 @@ import lombok.Setter;
 import com.artofcode.artofcodebck.user.User;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -19,19 +21,24 @@ import java.util.Date;
 public class JobOffer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdR;
-    private String  Title ;
-    private  String Location;
-    private  Integer Number ;
-    private  String Description;
-    private Date DatePost;
-    private  String Email;
-    private  String image;
-    private  float SalaryRange;
+    private Long idR;
+    private String  title ;
+    private  String location;
+    private  Integer number ;
+
+    private LocalDate datePost;
+    private  String description;
+    private  String email;
+    private  String fileName;
+    private  float salaryRange;
     @Enumerated(EnumType.STRING)
-    private  Type JobType;
-    @OneToOne(mappedBy = "jobOffer" )
+    private  Type jobType;
+    @JsonIgnore
+    @OneToOne (mappedBy = "jobOffer", cascade = CascadeType.REMOVE)
     private JobApplication jobApplication;
+    @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "recruiter_id")
+
     private  User user;
 }

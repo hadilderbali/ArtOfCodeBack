@@ -1,5 +1,6 @@
 package com.artofcode.artofcodebck.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,16 +18,18 @@ import java.io.Serializable;
 public class JobApplication  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long IdDancer;
-    private String NameD;
-    private String EmailDancer;
-    private Integer PhoneNumberDancer;
-    private  String ImageA;
-
-    private String CoverLetter;
-
+    private  Long idDancer;
+    private String nameD;
+    private String emailDancer;
+    private Integer phoneNumberDancer;
+    private  String imageA;
+    private  boolean status = false;
+    private String coverLetter;
+    @JsonIgnore
     @OneToOne
     private JobOffer jobOffer;
+    @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "dancer_id")
     private User user;
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Job Application Received</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2ecc71; /* Green background color */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>New Job Application Received</h2>
+    <p>A new job application has been received. Below are the details:</p>
+    <ul>
+        <li><strong>Name:</strong> {{name}}</li>
+        <li><strong>Email:</strong> {{email}}</li>
+        <li><strong>Phone Number:</strong> {{phoneNumber}}</li>
+        <li><strong>Cover Letter:</strong><br>{{coverLetter}}</li>
+    </ul>
+</div>
+</body>
+</html>

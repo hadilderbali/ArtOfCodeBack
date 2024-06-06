@@ -1,22 +1,18 @@
 package com.artofcode.artofcodebck.user;
 
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import com.artofcode.artofcodebck.profile.dancepref;
 import com.artofcode.artofcodebck.profile.musicpref;
 import com.artofcode.artofcodebck.profile.profile;
-
 import java.security.Principal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import com.artofcode.artofcodebck.user.Role;
 
 @Service
 @RequiredArgsConstructor
