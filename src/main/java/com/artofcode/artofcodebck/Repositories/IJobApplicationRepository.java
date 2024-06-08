@@ -16,4 +16,5 @@ public interface IJobApplicationRepository extends JpaRepository<JobApplication,
     Page<JobApplication> findByUserId(Integer id, Pageable pageable);
 
     JobApplication findByUserId (Integer idDancer);
+    JobApplication findByIdDancer(Integer idDancer);
 }

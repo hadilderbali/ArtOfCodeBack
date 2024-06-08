@@ -77,7 +77,8 @@ throws IOException {
 
     @Override
     public byte[] getJobAppPhotoById(Integer idDancer) throws Exception {
-        JobApplication jobApplication = jobApplicationRepository.findByUserId(idDancer);
+        System.out.println(idDancer);
+        JobApplication jobApplication = jobApplicationRepository.findByIdDancer(idDancer);
         String imageFileName = jobApplication.getImageA();
 
         // Get the real path to the ImagesJobApp directory using getRealPath

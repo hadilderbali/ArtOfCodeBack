@@ -130,7 +130,7 @@ public class JobService implements  IJobService {
     @Override
     public byte[] getJobOfferPhotoById(Long idR) throws Exception {
         JobOffer jobOffer = jobOfferRepository.findById(idR).orElseThrow(() -> new Exception("image Job Offer not found"));
-        return Files.readAllBytes(Paths.get(context.getRealPath("/Images/") + jobOffer.getFileName()));
+        return Files.readAllBytes(Paths.get(context.getRealPath("/images/") + jobOffer.getFileName()));
     }
     public Page<JobOffer> getJobOffersByUserId(Integer userid, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
