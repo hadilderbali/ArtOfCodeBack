@@ -105,6 +105,7 @@ public class BlogController {
 
     @GetMapping(path = "/ImgBlog/{blogId}")
     public byte[] getBlogPhoto(@PathVariable("blogId") Long blogId) throws Exception {
+        System.out.println(blogId);
         return iBlogService.getJobBlogPhotoById(blogId);
     }
 

@@ -1,5 +1,6 @@
 package com.artofcode.artofcodebck.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,17 +30,21 @@ public class Competition implements Serializable {
     private boolean expired;
     private  byte [] image;
     @OneToMany(mappedBy = "competition")
+    @JsonIgnore
     private  Set<ReclamationCompetition> reclamationCompetitions;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonIgnore
     private Category categoryId;
 
     @ManyToOne
     @JoinColumn(name = "judge_id")
+    @JsonIgnore
     private User judge;
 
     @OneToMany(mappedBy = "competition")
+    @JsonIgnore
     private Set<CompetitionCandidacy> CompetitionCandidacy;
 
 

@@ -1,6 +1,7 @@
 package com.artofcode.artofcodebck.Entities;
 
 import com.artofcode.artofcodebck.user.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -16,9 +17,11 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int rating;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonBackReference
     private Blog blog;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
 }

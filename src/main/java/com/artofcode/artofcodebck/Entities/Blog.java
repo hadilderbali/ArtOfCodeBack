@@ -3,6 +3,7 @@ package com.artofcode.artofcodebck.Entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -40,5 +41,6 @@ public class Blog implements Serializable {
     @ManyToOne
     private Category category;
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Rating> ratings;
 }
